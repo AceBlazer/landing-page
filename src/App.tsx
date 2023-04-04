@@ -1,35 +1,68 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useRef } from "react";
+import "./App.css";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Section0 from "./components/Section0";
+import Section1 from "./components/Section1";
+import Section2 from "./components/Section2";
+import Section3 from "./components/Section3";
+import Section4 from "./components/Section4";
+import Section5 from "./components/Section5";
+import Section6 from "./components/Section6";
+import Section7 from "./components/Section7";
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const ref = useRef<HTMLDivElement>(null);
+  gsap.registerPlugin(ScrollTrigger);
+
+  const animateDownloadSection = () => {
+    const element = ref.current;
+    if (!element) {
+      return;
+    }
+    gsap.fromTo(
+      element.querySelector("#download"),
+      {
+        opacity: 0,
+        y: -200,
+        z: 7,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        z: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: element.querySelector(".first"),
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      }
+    );
+  };
+
+  useEffect(() => {
+    animateDownloadSection();
+  }, []);
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div ref={ref}>
+      <Header />
+      <Section0 />
+      <Section1 />
+      <Section2 />
+      <Section3 />
+      <Section4 />
+      <Section5 />
+      <Section6 />
+      <Section7 />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

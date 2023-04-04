@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Arial-Narrow";
+  src: url("./assets/fonts/Arial\ Narrow.ttf");
+}
+
+@font-face {
+  font-family: "BeaufortforLOL-Bold";
+  src: url("./assets/fonts/BeaufortforLOL-Bold.ttf");
+}
+
+@font-face {
+  font-family: "BeaufortforLOL-Medium";
+  src: url("./assets/fonts/BeaufortforLOL-Medium.ttf");
+}
+
+@font-face {
+  font-family: "BeaufortforLOL-Regular";
+  src: url("./assets/fonts/BeaufortforLOL-Regular.ttf");
+}
+
+@font-face {
+  font-family: "FF-Mark-Pro-Bold";
+  src: url("./assets/fonts/FontFont_FF.Mark.Pro.Bold.ttf");
+}
+
+@font-face {
+  font-family: "FF-Mark-Pro-Medium";
+  src: url("./assets/fonts/FontFont_FF.Mark.Pro.Medium.ttf");
+}
