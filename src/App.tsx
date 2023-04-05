@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
-import "./App.css";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Section0 from "./components/Section0";
@@ -10,9 +12,6 @@ import Section4 from "./components/Section4";
 import Section5 from "./components/Section5";
 import Section6 from "./components/Section6";
 import Section7 from "./components/Section7";
-
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function App() {
   const ref = useRef<HTMLDivElement>(null);
@@ -27,7 +26,7 @@ function App() {
       element.querySelector("#download"),
       {
         opacity: 0,
-        y: -200,
+        y: -220,
         z: 7,
       },
       {
@@ -36,10 +35,33 @@ function App() {
         z: 0,
         ease: "none",
         scrollTrigger: {
-          trigger: element.querySelector(".first"),
-          start: "top top",
+          trigger: element.querySelector("#download"),
+          start: "20% 80%",
           end: "bottom bottom",
-          scrub: true,
+          scrub: 1,
+        },
+      }
+    );
+  };
+
+  const animateDownloadButton = () => {
+    const element = ref.current;
+    if (!element) {
+      return;
+    }
+    gsap.fromTo(
+      element.querySelector("#download-button"),
+      {
+        y: -200,
+      },
+      {
+        y: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: element.querySelector("#download"),
+          start: "20% 80%",
+          end: "bottom bottom",
+          scrub: 2,
         },
       }
     );
@@ -47,6 +69,7 @@ function App() {
 
   useEffect(() => {
     animateDownloadSection();
+    animateDownloadButton();
   }, []);
 
   return (

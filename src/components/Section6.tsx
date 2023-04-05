@@ -1,4 +1,14 @@
+import { useLayoutEffect, useState } from "react";
+import { downloadVideos } from "../constants/downloadVideos";
+
 export default function Section6() {
+  const [randomVideo, setRandomVideo] = useState<string | null>(null);
+
+  useLayoutEffect(() => {
+    const randomIndex = Math.floor(Math.random() * downloadVideos.length);
+    setRandomVideo(downloadVideos[randomIndex]);
+  }, []);
+
   return (
     <section
       className="relative w-full"
@@ -6,28 +16,28 @@ export default function Section6() {
     >
       <div className="overflow-hidden absolute left-0 top-0 flex w-full h-full items-center bg-customBg">
         <div id="download" className="opacity-1 relative z-0 h-full w-full">
-          <video
-            preload="none"
-            style={{
-              objectFit: "cover",
-              objectPosition: "center top",
-              height: "100%",
-              width: "auto",
-            }}
-            loop
-            muted
-            playsInline
-            autoPlay
-          >
-            <source
-              src="/videos/ss2020_lux_sylas_1920x1080.mp4"
-              type="video/mp4"
-            />
-          </video>
+          {randomVideo ? (
+            <video
+              preload="none"
+              style={{
+                objectFit: "cover",
+                objectPosition: "center top",
+                height: "100%",
+                width: "100%",
+              }}
+              loop
+              muted
+              playsInline
+              autoPlay
+            >
+              <source src={randomVideo} type="video/mp4" />
+            </video>
+          ) : null}
         </div>
       </div>
       <div className="absolute left-0 top-0 flex w-full h-full items-center justify-center text-customBlack">
         <a
+          id="download-button"
           className="cursor-pointer uppercase relative inline-block p-0 text-xs font-bold border-0"
           style={{
             minWidth: "195px",

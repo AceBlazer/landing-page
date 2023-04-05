@@ -1,9 +1,6 @@
 export default function Section0() {
   return (
-    <section
-      className="relative min-h-10 p-1"
-      style={{ minHeight: "20.25rem", boxSizing: "border-box" }}
-    >
+    <section className="relative min-h-[31.25rem] p-[3.75rem] box-border">
       <div className="absolute overflow-hidden left-0 top-0 bottom-0 w-full">
         <div className="w-full h-full relative z-0">
           <video
@@ -27,17 +24,17 @@ export default function Section0() {
         </div>
       </div>
       <div
-        className="relative z-1 flex items-center justify-center mx-0 my-auto"
+        className="relative z-1 flex items-center justify-center mx-auto my-0 max-w-[105rem] min-h-[31.25rem] h-[55vh]"
         style={{
-          minHeight: "20rem",
-          height: "55vh",
-          maxWidth: "40rem",
           WebkitBoxPack: "center",
           WebkitBoxAlign: "center",
         }}
       >
+        {/* fg video wrapper */}
         <div className="absolute left-0 top-0 w-full h-full">
+          {/* web */}
           <div className="w-full h-full block relative z-0">
+            <div className="absolute top-0 left-0 w-full h-full z-1 block"></div>
             <video
               className="overflow-clip relative z-0"
               preload="none"
@@ -60,6 +57,10 @@ export default function Section0() {
               />
             </video>
           </div>
+          {/* mobile */}
+          <div
+            style={{ display: window.innerWidth < 400 ? "block" : "none" }}
+          ></div>
         </div>
         <div className="absolute inset-1 pointer-events-none">
           <canvas
@@ -75,17 +76,8 @@ export default function Section0() {
           ></canvas>
         </div>
         <div className="w-full">
-          <div className="mt-1 text-center">
-            <div
-              className="inline-block relative"
-              style={{
-                // width: "40vw",
-                width: "20vw",
-                height: "calc(17.633)vw",
-                maxWidth: "37.5rem",
-                maxHeight: "16.5312rem",
-              }}
-            >
+          <div className="mt-[0.625rem] w-full text-center">
+            <div className="inline-block relative w-[40vw] h-[calc(17.6333vw)] max-w-[37.5rem] max-h-[16.5312rem]">
               <img
                 className="absolute left-0 top0 block m-0"
                 style={{

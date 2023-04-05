@@ -2,32 +2,457 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Korean Font for LCU: NotoSans Medium */
 @font-face {
-  font-family: "Arial-Narrow";
-  src: url("./assets/fonts/Arial\ Narrow.ttf");
+  font-family: "NotoSans-Medium";
+  src: url("./assets/fonts/NotoSans-Medium.otf") format("opentype");
 }
-
+/* AXIS Font Basic Medium */
+@font-face {
+  font-family: "Axis";
+  src: url("./assets/fonts/AxisStd-Mediumd41d.eot?#iefix");
+  src: url("./assets/fonts/AxisStd-Mediumd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/AxisStd-Medium.woff2") format("woff2"),
+    url("./assets/fonts/AxisStd-Medium.woff") format("woff"),
+    url("./assets/fonts/AxisStd-Medium.ttf") format("truetype"),
+    url("./assets/fonts/AxisStd-Medium.svg#") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AxisStd-Medium";
+  src: url("./assets/fonts/AxisStd-Mediumd41d.eot?#iefix");
+  src: url("./assets/fonts/AxisStd-Mediumd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/AxisStd-Medium.woff2") format("woff2"),
+    url("./assets/fonts/AxisStd-Medium.woff") format("woff"),
+    url("./assets/fonts/AxisStd-Medium.ttf") format("truetype"),
+    url("./assets/fonts/AxisStd-Medium.svg#") format("svg");
+}
+/* AXIS Font Basic Regular */
+@font-face {
+  font-family: "Axis";
+  src: url("./assets/fonts/AxisStd-Regulard41d.eot?#iefix");
+  src: url("./assets/fonts/AxisStd-Regulard41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/AxisStd-Regular.woff2") format("woff2"),
+    url("./assets/fonts/AxisStd-Regular.woff") format("woff"),
+    url("./assets/fonts/AxisStd-Regular.ttf") format("truetype"),
+    url("./assets/fonts/AxisStd-Regular.svg#") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AxisStd-Regular";
+  src: url("./assets/fonts/AxisStd-Regulard41d.eot?#iefix");
+  src: url("./assets/fonts/AxisStd-Regulard41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/AxisStd-Regular.woff2") format("woff2"),
+    url("./assets/fonts/AxisStd-Regular.woff") format("woff"),
+    url("./assets/fonts/AxisStd-Regular.ttf") format("truetype"),
+    url("./assets/fonts/AxisStd-Regular.svg#") format("svg");
+}
+/* Beaufort for LOL Bold */
+@font-face {
+  font-family: "Beaufort for LOL";
+  src: url("./assets/fonts/BeaufortforLOL-Boldd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-Boldd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/BeaufortforLOL-Bold.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-Bold.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-Bold.svg#") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
 @font-face {
   font-family: "BeaufortforLOL-Bold";
-  src: url("./assets/fonts/BeaufortforLOL-Bold.ttf");
+  src: url("./assets/fonts/BeaufortforLOL-Boldd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-Boldd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/BeaufortforLOL-Bold.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-Bold.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-Bold.svg#") format("svg");
 }
-
+/* Beaufort for LOL Bold Italic */
+@font-face {
+  font-family: "Beaufort for LOL";
+  src: url("./assets/fonts/BeaufortforLOL-BoldItalicd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-BoldItalicd41d.eot?#iefix")
+      format("eot"),
+    url("./assets/fonts/BeaufortforLOL-BoldItalic.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-BoldItalic.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-BoldItalic.svg#") format("svg");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "BeaufortforLOL-BoldItalic";
+  src: url("./assets/fonts/BeaufortforLOL-BoldItalicd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-BoldItalicd41d.eot?#iefix")
+      format("eot"),
+    url("./assets/fonts/BeaufortforLOL-BoldItalic.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-BoldItalic.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-BoldItalic.svg#") format("svg");
+}
+/* Beaufort for LOL Heavy */
+@font-face {
+  font-family: "Beaufort for LOL";
+  src: url("./assets/fonts/BeaufortforLOL-Heavyd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-Heavyd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/BeaufortforLOL-Heavy.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-Heavy.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-Heavy.svg#") format("svg");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BeaufortforLOL-Heavy";
+  src: url("./assets/fonts/BeaufortforLOL-Heavyd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-Heavyd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/BeaufortforLOL-Heavy.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-Heavy.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-Heavy.svg#") format("svg");
+}
+/* Beaufort for LOL Heavy Italic */
+@font-face {
+  font-family: "Beaufort for LOL";
+  src: url("./assets/fonts/BeaufortforLOL-HeavyItalicd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-HeavyItalicd41d.eot?#iefix")
+      format("eot"),
+    url("./assets/fonts/BeaufortforLOL-HeavyItalic.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-HeavyItalic.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-HeavyItalic.svg#") format("svg");
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: "BeaufortforLOL-HeavyItalic";
+  src: url("./assets/fonts/BeaufortforLOL-HeavyItalicd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-HeavyItalicd41d.eot?#iefix")
+      format("eot"),
+    url("./assets/fonts/BeaufortforLOL-HeavyItalic.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-HeavyItalic.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-HeavyItalic.svg#") format("svg");
+}
+/* Beaufort for LOL Italic */
+@font-face {
+  font-family: "Beaufort for LOL";
+  src: url("./assets/fonts/BeaufortforLOL-Italicd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-Italicd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/BeaufortforLOL-Italic.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-Italic.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-Italic.svg#") format("svg");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "BeaufortforLOL-Italic";
+  src: url("./assets/fonts/BeaufortforLOL-Italicd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-Italicd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/BeaufortforLOL-Italic.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-Italic.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-Italic.svg#") format("svg");
+}
+/* Beaufort for LOL Light */
+@font-face {
+  font-family: "Beaufort for LOL";
+  src: url("./assets/fonts/BeaufortforLOL-Lightd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-Lightd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/BeaufortforLOL-Light.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-Light.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-Light.svg#") format("svg");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BeaufortforLOL-Light";
+  src: url("./assets/fonts/BeaufortforLOL-Lightd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-Lightd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/BeaufortforLOL-Light.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-Light.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-Light.svg#") format("svg");
+}
+/* Beaufort for LOL Light Italic */
+@font-face {
+  font-family: "Beaufort for LOL";
+  src: url("./assets/fonts/BeaufortforLOL-LightItalicd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-LightItalicd41d.eot?#iefix")
+      format("eot"),
+    url("./assets/fonts/BeaufortforLOL-LightItalic.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-LightItalic.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-LightItalic.svg#") format("svg");
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: "BeaufortforLOL-LightItalic";
+  src: url("./assets/fonts/BeaufortforLOL-LightItalicd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-LightItalicd41d.eot?#iefix")
+      format("eot"),
+    url("./assets/fonts/BeaufortforLOL-LightItalic.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-LightItalic.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-LightItalic.svg#") format("svg");
+}
+/* Beaufort for LOL Medium */
+@font-face {
+  font-family: "Beaufort for LOL";
+  src: url("./assets/fonts/BeaufortforLOL-Mediumd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-Mediumd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/BeaufortforLOL-Medium.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-Medium.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-Medium.svg#") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
 @font-face {
   font-family: "BeaufortforLOL-Medium";
-  src: url("./assets/fonts/BeaufortforLOL-Medium.ttf");
+  src: url("./assets/fonts/BeaufortforLOL-Mediumd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-Mediumd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/BeaufortforLOL-Medium.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-Medium.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-Medium.svg#") format("svg");
 }
-
+/* Beaufort for LOL Medium Italic */
+@font-face {
+  font-family: "Beaufort for LOL";
+  src: url("./assets/fonts/BeaufortforLOL-MediumItalicd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-MediumItalicd41d.eot?#iefix")
+      format("eot"),
+    url("./assets/fonts/BeaufortforLOL-MediumItalic.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-MediumItalic.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-MediumItalic.svg#") format("svg");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "BeaufortforLOL-MediumItalic";
+  src: url("./assets/fonts/BeaufortforLOL-MediumItalicd41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-MediumItalicd41d.eot?#iefix")
+      format("eot"),
+    url("./assets/fonts/BeaufortforLOL-MediumItalic.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-MediumItalic.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-MediumItalic.svg#") format("svg");
+}
+/* Beaufort for LOL Regular */
+@font-face {
+  font-family: "Beaufort for LOL";
+  src: url("./assets/fonts/BeaufortforLOL-Regulard41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-Regulard41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/BeaufortforLOL-Regular.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-Regular.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-Regular.svg#") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
 @font-face {
   font-family: "BeaufortforLOL-Regular";
-  src: url("./assets/fonts/BeaufortforLOL-Regular.ttf");
+  src: url("./assets/fonts/BeaufortforLOL-Regulard41d.eot?#iefix");
+  src: url("./assets/fonts/BeaufortforLOL-Regulard41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/BeaufortforLOL-Regular.woff") format("woff"),
+    url("./assets/fonts/BeaufortforLOL-Regular.ttf") format("truetype"),
+    url("./assets/fonts/BeaufortforLOL-Regular.svg#") format("svg");
+}
+/* Korean Font: Namum Gothic (deprecated) */
+@font-face {
+  font-family: "Namum Gothic";
+  src: url("./assets/fonts/NamumGothic.ttf");
+  src: url("./assets/fonts/NamumGothic.ttf") format("truetype"),
+    url("./assets/fonts/NamumGothic.otf") format("otf"),
+    url("./assets/fonts/NamumGothic.svg#") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NamumGothic";
+  src: url("./assets/fonts/NamumGothic.ttf");
+  src: url("./assets/fonts/NamumGothic.ttf") format("truetype"),
+    url("./assets/fonts/NamumGothic.otf") format("otf"),
+    url("./assets/fonts/NamumGothic.svg#") format("svg");
+}
+/* Korean Font: Namum Gothic Bold (deprecated) */
+@font-face {
+  font-family: "Namum Gothic";
+  src: url("./assets/fonts/NamumGothic-Bold.ttf");
+  src: url("./assets/fonts/NamumGothic-Bold.ttf") format("truetype"),
+    url("./assets/fonts/NamumGothic-Bold.otf") format("otf"),
+    url("./assets/fonts/NamumGothic-Bold.svg#") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NamumGothic-Bold";
+  src: url("./assets/fonts/NamumGothic-Bold.ttf");
+  src: url("./assets/fonts/NamumGothic-Bold.ttf") format("truetype"),
+    url("./assets/fonts/NamumGothic-Bold.otf") format("otf"),
+    url("./assets/fonts/NamumGothic-Bold.svg#") format("svg");
+}
+/* Korean Font: Nanum Gothic */
+@font-face {
+  font-family: "Nanum Gothic";
+  src: url("./assets/fonts/NanumGothic.ttf");
+  src: url("./assets/fonts/NanumGothic.ttf") format("truetype"),
+    url("./assets/fonts/NanumGothic.otf") format("otf"),
+    url("./assets/fonts/NanumGothic.svg#") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NanumGothic";
+  src: url("./assets/fonts/NanumGothic.ttf");
+  src: url("./assets/fonts/NanumGothic.ttf") format("truetype"),
+    url("./assets/fonts/NanumGothic.otf") format("otf"),
+    url("./assets/fonts/NanumGothic.svg#") format("svg");
+}
+/* Korean Font: Nanum Gothic Bold */
+@font-face {
+  font-family: "Nanum Gothic";
+  src: url("./assets/fonts/NanumGothic-Bold.ttf");
+  src: url("./assets/fonts/NanumGothic-Bold.ttf") format("truetype"),
+    url("./assets/fonts/NanumGothic-Bold.otf") format("otf"),
+    url("./assets/fonts/NanumGothic-Bold.svg#") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NanumGothic-Bold";
+  src: url("./assets/fonts/NanumGothic-Bold.ttf");
+  src: url("./assets/fonts/NanumGothic-Bold.ttf") format("truetype"),
+    url("./assets/fonts/NanumGothic-Bold.otf") format("otf"),
+    url("./assets/fonts/NanumGothic-Bold.svg#") format("svg");
+}
+/* Spiegel Bold */
+@font-face {
+  font-family: "Spiegel";
+  src: url("./assets/fonts/Spiegel-Boldd41d.eot?#iefix");
+  src: url("./assets/fonts/Spiegel-Boldd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/Spiegel-Bold.woff") format("woff"),
+    url("./assets/fonts/Spiegel-Bold.ttf") format("truetype"),
+    url("./assets/fonts/Spiegel-Bold.svg#") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Spiegel-Bold";
+  src: url("./assets/fonts/Spiegel-Boldd41d.eot?#iefix");
+  src: url("./assets/fonts/Spiegel-Boldd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/Spiegel-Bold.woff") format("woff"),
+    url("./assets/fonts/Spiegel-Bold.ttf") format("truetype"),
+    url("./assets/fonts/Spiegel-Bold.svg#") format("svg");
+}
+/* Spiegel Bold Italic */
+@font-face {
+  font-family: "Spiegel";
+  src: url("./assets/fonts/Spiegel-BoldItalicd41d.eot?#iefix");
+  src: url("./assets/fonts/Spiegel-BoldItalicd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/Spiegel-BoldItalic.woff") format("woff"),
+    url("./assets/fonts/Spiegel-BoldItalic.ttf") format("truetype"),
+    url("./assets/fonts/Spiegel-BoldItalic.svg#") format("svg");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Spiegel-BoldItalic";
+  src: url("./assets/fonts/Spiegel-BoldItalicd41d.eot?#iefix");
+  src: url("./assets/fonts/Spiegel-BoldItalicd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/Spiegel-BoldItalic.woff") format("woff"),
+    url("./assets/fonts/Spiegel-BoldItalic.ttf") format("truetype"),
+    url("./assets/fonts/Spiegel-BoldItalic.svg#") format("svg");
+}
+/* Spiegel Regular */
+@font-face {
+  font-family: "Spiegel";
+  src: url("./assets/fonts/Spiegel-Regulard41d.eot?#iefix");
+  src: url("./assets/fonts/Spiegel-Regulard41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/Spiegel-Regular.woff") format("woff"),
+    url("./assets/fonts/Spiegel-Regular.ttf") format("truetype"),
+    url("./assets/fonts/Spiegel-Regular.svg#") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Spiegel-Regular";
+  src: url("./assets/fonts/Spiegel-Regulard41d.eot?#iefix");
+  src: url("./assets/fonts/Spiegel-Regulard41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/Spiegel-Regular.woff") format("woff"),
+    url("./assets/fonts/Spiegel-Regular.ttf") format("truetype"),
+    url("./assets/fonts/Spiegel-Regular.svg#") format("svg");
+}
+/* Spiegel Regular Italic */
+@font-face {
+  font-family: "Spiegel";
+  src: url("./assets/fonts/Spiegel-RegularItalicd41d.eot?#iefix");
+  src: url("./assets/fonts/Spiegel-RegularItalicd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/Spiegel-RegularItalic.woff") format("woff"),
+    url("./assets/fonts/Spiegel-RegularItalic.ttf") format("truetype"),
+    url("./assets/fonts/Spiegel-RegularItalic.svg#") format("svg");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Spiegel-RegularItalic";
+  src: url("./assets/fonts/Spiegel-RegularItalicd41d.eot?#iefix");
+  src: url("./assets/fonts/Spiegel-RegularItalicd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/Spiegel-RegularItalic.woff") format("woff"),
+    url("./assets/fonts/Spiegel-RegularItalic.ttf") format("truetype"),
+    url("./assets/fonts/Spiegel-RegularItalic.svg#") format("svg");
+}
+/* Spiegel SemiBold */
+@font-face {
+  font-family: "Spiegel";
+  src: url("./assets/fonts/Spiegel-SemiBoldd41d.eot?#iefix");
+  src: url("./assets/fonts/Spiegel-SemiBoldd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/Spiegel-SemiBold.woff") format("woff"),
+    url("./assets/fonts/Spiegel-SemiBold.ttf") format("truetype"),
+    url("./assets/fonts/Spiegel-SemiBold.svg#") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Spiegel-SemiBold";
+  src: url("./assets/fonts/Spiegel-SemiBoldd41d.eot?#iefix");
+  src: url("./assets/fonts/Spiegel-SemiBoldd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/Spiegel-SemiBold.woff") format("woff"),
+    url("./assets/fonts/Spiegel-SemiBold.ttf") format("truetype"),
+    url("./assets/fonts/Spiegel-SemiBold.svg#") format("svg");
+}
+/* Spiegel SemiBold Italic */
+@font-face {
+  font-family: "Spiegel";
+  src: url("./assets/fonts/Spiegel-SemiBoldItalicd41d.eot?#iefix");
+  src: url("./assets/fonts/Spiegel-SemiBoldItalicd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/Spiegel-SemiBoldItalic.woff") format("woff"),
+    url("./assets/fonts/Spiegel-SemiBoldItalic.ttf") format("truetype"),
+    url("./assets/fonts/Spiegel-SemiBoldItalic.svg#") format("svg");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Spiegel-SemiBoldItalic";
+  src: url("./assets/fonts/Spiegel-SemiBoldItalicd41d.eot?#iefix");
+  src: url("./assets/fonts/Spiegel-SemiBoldItalicd41d.eot?#iefix") format("eot"),
+    url("./assets/fonts/Spiegel-SemiBoldItalic.woff") format("woff"),
+    url("./assets/fonts/Spiegel-SemiBoldItalic.ttf") format("truetype"),
+    url("./assets/fonts/Spiegel-SemiBoldItalic.svg#") format("svg");
 }
 
-@font-face {
-  font-family: "FF-Mark-Pro-Bold";
-  src: url("./assets/fonts/FontFont_FF.Mark.Pro.Bold.ttf");
+@layer base {
+  html {
+    font-family: "Arial Narrow";
+  }
 }
 
-@font-face {
-  font-family: "FF-Mark-Pro-Medium";
-  src: url("./assets/fonts/FontFont_FF.Mark.Pro.Medium.ttf");
+h1 {
+  font-size: 2em;
+  font-family: "Beaufort for LOL";
+  line-height: 0.85;
+  font-weight: 800;
+}
+
+span {
+  text-transform: uppercase;
+}
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
 }
