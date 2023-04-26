@@ -1,3 +1,5 @@
+import HexOutline from "./hex-outline";
+
 export default function Section5() {
   return (
     <div className="h-auto px-5 py-20 flex w-full  after:content-[''] after:w-[80px]">
@@ -60,7 +62,75 @@ export default function Section5() {
                 </strong>
               </h1>
             </div>
-            <ul className="relative z-1 w-full max-w-[960px] list-none	p-0 flex mobile:flex-col "></ul>
+            <ul
+              id="section-five"
+              className="relative z-1 w-full max-w-[960px] list-none mt-[10px] mx-auto mb-0	p-0 flex mobile:flex-col "
+            >
+              <li className="z-10 mt-0 flex-[0_1_100%] w-full min-w-0 mobile:mt-0">
+                <article className="h-full">
+                  <a className="relative box-border flex flex-col h-full my-0 mx-[10px] border-0 bg-transparent">
+                    <div className="relative width-[calc(100% + 20px)] -ml-[10px] pt-[56.25%]">
+                      <div className="absolute top-0 left-0 w-full h-full">
+                        <img
+                          className="object-cover block w-full h-full"
+                          src="/images/MSI23_PATTERN_ALT_1920x1080-WHITE.jpg"
+                        />
+                      </div>
+                    </div>
+                    <div className="uppercase italic flex-[1_1_auto] p-[10%] my-0 -ml-[10px] text-center break-words bg-ccwhite font-lolBold text-md">
+                      Présentation du MSI 2023
+                    </div>
+
+                    <HexOutline
+                      isActive
+                      offsetAmount={4}
+                      offsetHorizontal={1}
+                      offsetVertical={1}
+                      clipLeftTop={20}
+                      clipRightBot={20}
+                      strokeColor={"#bcbcbc"}
+                      transitionDelay={3000 + 150}
+                      transitionDuration={1200}
+                      interactive
+                      hovering={false}
+                      hoverDuration={1000}
+                    />
+                  </a>
+                </article>
+              </li>
+              <li className="z-10 mt-0 flex-[0_1_100%] w-full min-w-0 mobile:mt-[30px]">
+                <article className="h-full">
+                  <a className="relative box-border flex flex-col h-full my-0 mx-[10px] border-0 bg-transparent">
+                    <div className="relative width-[calc(100% + 20px)] -ml-[10px] pt-[56.25%]">
+                      <div className="absolute top-0 left-0 w-full h-full">
+                        <img
+                          className="object-cover block w-full h-full"
+                          src="/images/00_Header_SG2.jpg"
+                        />
+                      </div>
+                    </div>
+                    <div className="uppercase italic flex-[1_1_auto] p-[10%] my-0 -ml-[10px] text-center break-words bg-ccwhite font-lolBold text-sm">
+                      Précédemment dans les Gardiens des étoiles
+                    </div>
+
+                    <HexOutline
+                      isActive
+                      offsetAmount={4}
+                      offsetHorizontal={1}
+                      offsetVertical={1}
+                      clipLeftTop={20}
+                      clipRightBot={20}
+                      strokeColor={"#bcbcbc"}
+                      transitionDelay={3000 + 150}
+                      transitionDuration={1200}
+                      interactive
+                      hovering={false}
+                      hoverDuration={1000}
+                    />
+                  </a>
+                </article>
+              </li>
+            </ul>
           </section>
         </div>
       </div>

@@ -10,6 +10,8 @@ export default {
       primary: "rgb(11, 198, 227)",
       primaryHover: "rgb(19, 216, 246)",
       primaryText: "rgb(28, 29, 42)",
+      transparent: "rgba(0,0,0,0)",
+      ccwhite: "rgb(246, 246, 246)",
     },
     fontFamily: {
       arialNarrow: ["Spiegel", "Arial Narrow", "Arial", "sans-serif"],

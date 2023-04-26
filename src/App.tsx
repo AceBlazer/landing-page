@@ -67,9 +67,41 @@ function App() {
     );
   };
 
+  const animateSectionFive = () => {
+    const element = ref.current;
+    if (!element) {
+      return;
+    }
+    let yValue = 270.8;
+    let startValue = -45;
+    let endValue = 0;
+    Array.from(element.querySelector("#section-five")?.children ?? []).forEach(
+      (child) => {
+        yValue = yValue + 15;
+        gsap.fromTo(
+          child,
+          {
+            y: yValue,
+          },
+          {
+            y: 0,
+            ease: "none",
+            scrollTrigger: {
+              trigger: element.querySelector("#section-five"),
+              start: `${startValue + 50}% 80%`,
+              end: `${endValue + 50}% 100%`,
+              scrub: 2,
+            },
+          }
+        );
+      }
+    );
+  };
+
   useEffect(() => {
     animateDownloadSection();
     animateDownloadButton();
+    animateSectionFive();
   }, []);
 
   return (
