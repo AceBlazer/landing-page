@@ -150,8 +150,6 @@ class HexCanvas extends Canvas2d {
       maskTop,
     } = this._options;
 
-    console.log(elapsed, transition.duration, transition.delay);
-
     const activationProgress = this.getActivationProgress(
       elapsed,
       transition.duration,

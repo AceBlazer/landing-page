@@ -11,8 +11,6 @@ import { ResizeHandler } from "../../managers/viewport-manager";
 export function useResize(handler: ResizeHandler, dependencies: any[] = []) {
   const { viewport } = useContext(ManagerContext);
 
-  console.log(viewport.latest);
-
   const { width, height, dpr, scrollHeight } = viewport.latest;
 
   useEffect(() => {

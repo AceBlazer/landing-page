@@ -1,6 +1,10 @@
-import HexOutline from "./hex-outline";
+import { useState } from "react";
+import HexOutline, { HexTransitionType } from "./hex-outline";
+import * as ease from "../utils/math/easing";
 
 export default function Section5() {
+  const [isHovering, setIsHovering] = useState("");
+
   return (
     <div className="h-auto px-5 py-20 flex w-full  after:content-[''] after:w-[80px]">
       <div className="relative" style={{ width: "60px", flex: "0 0 auto" }}>
@@ -66,7 +70,12 @@ export default function Section5() {
               id="section-five"
               className="relative z-1 w-full max-w-[960px] list-none mt-[10px] mx-auto mb-0	p-0 flex mobile:flex-col "
             >
-              <li className="z-10 mt-0 flex-[0_1_100%] w-full min-w-0 mobile:mt-0">
+              <li
+                key={"listItem1"}
+                className="z-10 mt-0 flex-[0_1_100%] w-full min-w-0 mobile:mt-0"
+                onMouseEnter={() => setIsHovering("listItem1")}
+                onMouseLeave={() => setIsHovering("")}
+              >
                 <article className="h-full">
                   <a className="relative box-border flex flex-col h-full my-0 mx-[10px] border-0 bg-transparent">
                     <div className="relative width-[calc(100% + 20px)] -ml-[10px] pt-[56.25%]">
@@ -86,19 +95,26 @@ export default function Section5() {
                       offsetAmount={4}
                       offsetHorizontal={1}
                       offsetVertical={1}
-                      clipLeftTop={20}
-                      clipRightBot={20}
+                      clipRightTop={20}
                       strokeColor={"#bcbcbc"}
-                      transitionDelay={3000 + 150}
-                      transitionDuration={1200}
+                      accentColor={"#bcbcbc"}
+                      accentThickness={1.7}
+                      transitionDuration={1500}
+                      transitionDelay={0}
                       interactive
-                      hovering={false}
-                      hoverDuration={1000}
+                      hovering={isHovering === "listItem1"}
+                      hoverEase={ease.outExpo}
+                      transition={HexTransitionType.GROW}
                     />
                   </a>
                 </article>
               </li>
-              <li className="z-10 mt-0 flex-[0_1_100%] w-full min-w-0 mobile:mt-[30px]">
+              <li
+                key={"listItem2"}
+                className="z-10 mt-0 flex-[0_1_100%] w-full min-w-0 mobile:mt-[30px]"
+                onMouseEnter={() => setIsHovering("listItem2")}
+                onMouseLeave={() => setIsHovering("")}
+              >
                 <article className="h-full">
                   <a className="relative box-border flex flex-col h-full my-0 mx-[10px] border-0 bg-transparent">
                     <div className="relative width-[calc(100% + 20px)] -ml-[10px] pt-[56.25%]">
@@ -118,14 +134,16 @@ export default function Section5() {
                       offsetAmount={4}
                       offsetHorizontal={1}
                       offsetVertical={1}
-                      clipLeftTop={20}
-                      clipRightBot={20}
+                      clipRightTop={20}
                       strokeColor={"#bcbcbc"}
-                      transitionDelay={3000 + 150}
-                      transitionDuration={1200}
+                      accentColor={"#bcbcbc"}
+                      accentThickness={1.5}
+                      transitionDuration={1500}
+                      transitionDelay={0}
                       interactive
-                      hovering={false}
-                      hoverDuration={1000}
+                      hovering={isHovering === "listItem2"}
+                      hoverEase={ease.outExpo}
+                      transition={HexTransitionType.GROW}
                     />
                   </a>
                 </article>

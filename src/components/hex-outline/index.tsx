@@ -106,11 +106,7 @@ const HexOutline: React.FC<Props> = (props) => {
   const [hover] = useState<{ progress: number }>({ progress: 0 });
 
   function updateBounds(container: HTMLElement) {
-    console.log("updateBounds");
-
     const bounds = container.getBoundingClientRect();
-
-    console.log(bounds);
 
     setContainerWidth(bounds.width);
     setContainerHeight(bounds.height);
@@ -316,6 +312,7 @@ const HexOutline: React.FC<Props> = (props) => {
   useTicker(
     ({ delta, elapsed }) => {
       // For interactive items, constantly update the path
+
       if (props.interactive) {
         const prevProgress = hover.progress;
         hover.progress +=
@@ -365,8 +362,6 @@ const HexOutline: React.FC<Props> = (props) => {
       refresh,
     });
   }, []);
-
-  // console.log("canvasRef", canvasRef.current.toDataURL());
 
   return (
     <div

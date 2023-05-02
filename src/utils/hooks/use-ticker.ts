@@ -14,6 +14,7 @@ export function useTicker(handler: Handler, deps: any[] = []) {
 
   useEffect(() => {
     const tickId = ticker.on(({ ...args }) => handler({ ...args }));
+
     return () => {
       ticker.off(tickId);
     };

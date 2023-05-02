@@ -1,4 +1,10 @@
+import { useState } from "react";
+import * as ease from "../utils/math/easing";
+import HexOutline from "./hex-outline";
+
 export default function Section0() {
+  const [hovering, setHovering] = useState(false);
+
   return (
     <section className="relative min-h-[31.25rem] p-[3.75rem] box-border">
       <div className="absolute overflow-hidden left-0 top-0 bottom-0 w-full">
@@ -23,6 +29,7 @@ export default function Section0() {
           </video>
         </div>
       </div>
+
       <div
         className="relative z-1 flex items-center justify-center mx-auto my-0 max-w-[105rem] min-h-[31.25rem] h-[55vh]"
         style={{
@@ -33,14 +40,19 @@ export default function Section0() {
         {/* fg video wrapper */}
         <div className="absolute left-0 top-0 w-full h-full">
           {/* web */}
-          <div className="w-full h-full block relative z-0">
+          <div
+            className="w-full h-full block relative z-0"
+            style={{ display: window.innerWidth < 400 ? "none" : "block" }}
+          >
             <div className="absolute top-0 left-0 w-full h-full z-1 block"></div>
             <video
-              className="overflow-clip relative z-0"
+              className="overflow-clip relative z-0 "
               preload="none"
               style={{
                 objectFit: "cover",
                 objectPosition: "center center",
+                height: "100%",
+                width: "100%",
               }}
               playsInline
               loop
@@ -62,19 +74,14 @@ export default function Section0() {
             style={{ display: window.innerWidth < 400 ? "block" : "none" }}
           ></div>
         </div>
-        <div className="absolute inset-1 pointer-events-none">
-          <canvas
-            className="absolute block overflow-clip"
-            width="418"
-            height="491"
-            style={{
-              height: "589.612px",
-              left: "8px",
-              top: "-12px",
-              width: "501.612px",
-            }}
-          ></canvas>
-        </div>
+        <HexOutline
+          isActive
+          clipRightTop={20}
+          offsetAmount={4}
+          offsetVertical={2}
+          offsetHorizontal={-2}
+          strokeColor="#bcbcbc"
+        />
         <div className="w-full">
           <div className="mt-[0.625rem] w-full text-center">
             <div className="inline-block relative w-[40vw] h-[calc(17.6333vw)] max-w-[37.5rem] max-h-[16.5312rem]">
@@ -87,8 +94,71 @@ export default function Section0() {
                 sizes="(max-width: 599px) 80vw,40vw"
               />
             </div>
+            {/* button */}
+            <a
+              id="download-button"
+              className="cursor-pointer uppercase relative inline-block p-0 text-xs font-extrabold border-0"
+              style={{
+                minWidth: "195px",
+                height: "56px",
+                margin: "5px",
+                letterSpacing: "0.15em",
+              }}
+            >
+              <span
+                className="relative flex items-center justify-center"
+                style={{
+                  boxSizing: "border-box",
+                  minWidth: "195px",
+                  height: "56px",
+                  padding: "0px 40px",
+                }}
+                onMouseEnter={() => setHovering(true)}
+                onMouseLeave={() => setHovering(false)}
+              >
+                <div>
+                  <span
+                    className="bg-primary hover:bg-primaryHover absolute left-0 top-0 w-full"
+                    style={{
+                      minWidth: "195px",
+                      height: "56px",
+                      transition:
+                        "background-color 200ms ease 0s, opacity 0.01s ease 400ms",
+                    }}
+                  ></span>
+                </div>
+                <span className="relative z-1">Jouez gratuitement</span>
+                <HexOutline
+                  isActive
+                  offsetAmount={2}
+                  offsetHorizontal={1}
+                  offsetVertical={1}
+                  clipLeftTop={20}
+                  clipRightBot={20}
+                  strokeColor={"#bcbcbc"}
+                  transitionDelay={3000 + 150}
+                  transitionDuration={1200}
+                  interactive
+                  hovering={hovering}
+                  hoverDuration={200}
+                  hoverEase={ease.inOutQuart}
+                />
+              </span>
+              <div className="absolute inset-1 pointer-events-none">
+                <canvas
+                  className="absolute block"
+                  width="206"
+                  height="54"
+                  style={{
+                    width: "247.519px",
+                    height: "66px",
+                    left: "-6px",
+                    top: "-6px",
+                  }}
+                ></canvas>
+              </div>
+            </a>
           </div>
-          <div></div>
         </div>
       </div>
     </section>

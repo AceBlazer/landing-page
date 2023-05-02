@@ -1,8 +1,12 @@
 import { useLayoutEffect, useState } from "react";
 import { downloadVideos } from "../constants/downloadVideos";
+import * as ease from "../utils/math/easing";
+import HexOutline from "./hex-outline";
 
 export default function Section6() {
   const [randomVideo, setRandomVideo] = useState<string | null>(null);
+
+  const [hovering, setHovering] = useState(false);
 
   useLayoutEffect(() => {
     const randomIndex = Math.floor(Math.random() * downloadVideos.length);
@@ -54,6 +58,8 @@ export default function Section6() {
               height: "56px",
               padding: "0px 40px",
             }}
+            onMouseEnter={() => setHovering(true)}
+            onMouseLeave={() => setHovering(false)}
           >
             <div>
               <span
@@ -67,6 +73,21 @@ export default function Section6() {
               ></span>
             </div>
             <span className="relative z-1">Jouez gratuitement</span>
+            <HexOutline
+              isActive
+              offsetAmount={2}
+              offsetHorizontal={1}
+              offsetVertical={1}
+              clipLeftTop={20}
+              clipRightBot={20}
+              strokeColor={"#bcbcbc"}
+              transitionDelay={3000 + 150}
+              transitionDuration={1200}
+              interactive
+              hovering={hovering}
+              hoverDuration={200}
+              hoverEase={ease.inOutQuart}
+            />
           </span>
           <div className="absolute inset-1 pointer-events-none">
             <canvas

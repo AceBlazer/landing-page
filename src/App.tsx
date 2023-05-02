@@ -1,6 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScrollElementContext from "./contexts/scroll-element";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -12,8 +13,19 @@ import Section4 from "./components/Section4";
 import Section5 from "./components/Section5";
 import Section6 from "./components/Section6";
 import Section7 from "./components/Section7";
+import {
+  InputManagerInstance,
+  ViewportManagerInstance,
+  activateManagers,
+  deactivateManagers,
+} from "./managers";
+import { useResize } from "./utils/hooks/use-resize";
 
 function App() {
+  const [scrollElement, setScrollElement] = useState<HTMLElement | null>(
+    useContext(ScrollElementContext)
+  );
+
   const ref = useRef<HTMLDivElement>(null);
   gsap.registerPlugin(ScrollTrigger);
 
@@ -103,6 +115,27 @@ function App() {
     animateDownloadButton();
     animateSectionFive();
   }, []);
+
+  // Bind global managers...
+  useEffect(() => {
+    if (scrollElement === null) return;
+    activateManagers(scrollElement);
+    const delayedInitialResize = setTimeout(() => {
+      ViewportManagerInstance.refresh();
+      ViewportManagerInstance.apply();
+      InputManagerInstance.refresh();
+    }, 3000); // 3s provides enough time for initial entry animations to finish first
+    return () => {
+      clearTimeout(delayedInitialResize);
+      deactivateManagers();
+    };
+  }, [scrollElement]);
+
+  // ...also keep the InputManager bounds up-to-date
+  useResize(() => {
+    if (scrollElement === null) return;
+    InputManagerInstance.refresh();
+  }, [scrollElement]);
 
   return (
     <div ref={ref}>
