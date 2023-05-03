@@ -89,11 +89,11 @@ export default function Section5() {
                     <div className="uppercase italic flex-[1_1_auto] p-[10%] my-0 -ml-[10px] text-center break-words bg-ccwhite font-lolBold text-md">
                       Présentation du MSI 2023
                     </div>
-
                     <HexOutline
+                      className="-ml-[10px]"
                       isActive
                       offsetAmount={4}
-                      offsetHorizontal={1}
+                      offsetHorizontal={-1}
                       offsetVertical={1}
                       clipRightTop={20}
                       strokeColor={"#bcbcbc"}
@@ -130,9 +130,10 @@ export default function Section5() {
                     </div>
 
                     <HexOutline
+                      className="-ml-[10px]"
                       isActive
                       offsetAmount={4}
-                      offsetHorizontal={1}
+                      offsetHorizontal={-1}
                       offsetVertical={1}
                       clipRightTop={20}
                       strokeColor={"#bcbcbc"}

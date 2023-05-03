@@ -6,9 +6,9 @@ export default function Section0() {
   const [hovering, setHovering] = useState(false);
 
   return (
-    <section className="relative min-h-[31.25rem] p-[3.75rem] box-border">
+    <section className="relative min-h-[31.25rem] p-[3.75rem] box-border z-10">
       <div className="absolute overflow-hidden left-0 top-0 bottom-0 w-full">
-        <div className="w-full h-full relative z-0">
+        <div className="w-full h-5/6 relative z-0">
           <video
             className="overflow-clip relative z-0 w-full h-full"
             preload="metadata"
@@ -84,9 +84,9 @@ export default function Section0() {
         />
         <div className="w-full">
           <div className="mt-[0.625rem] w-full text-center">
-            <div className="inline-block relative w-[40vw] h-[calc(17.6333vw)] max-w-[37.5rem] max-h-[16.5312rem]">
+            <div className="inline-block relative w-[40vw] h-[17.6333vw] max-w-[37.5rem] max-h-[16.5312rem]">
               <img
-                className="absolute left-0 top0 block m-0"
+                className="absolute left-0 top-0 block m-0"
                 style={{
                   animation: "1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s",
                 }}
@@ -144,19 +144,6 @@ export default function Section0() {
                   hoverEase={ease.inOutQuart}
                 />
               </span>
-              <div className="absolute inset-1 pointer-events-none">
-                <canvas
-                  className="absolute block"
-                  width="206"
-                  height="54"
-                  style={{
-                    width: "247.519px",
-                    height: "66px",
-                    left: "-6px",
-                    top: "-6px",
-                  }}
-                ></canvas>
-              </div>
             </a>
           </div>
         </div>
